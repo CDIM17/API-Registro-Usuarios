@@ -1,7 +1,7 @@
 var usuarios = [];
 var usuarioSeleccionado;
 
-var url = 'https://en-linea.app/API-Usuarios/Backend/API-USUARIOS/api/usuarios.php';
+var url = 'http://localhost/API-Usuarios/Backend/API-USUARIOS/api/usuarios.php';
 
 function obtenerUsuarios()
 {
