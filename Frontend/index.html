@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  </head>
+  <body>
+
+    Nombre:              <input type="text" id="nombre"          placeholder="Escribe tu Nombre"><br>
+    Apellido:            <input type="text" id="apellido"        placeholder="Escribe tu Apellido"><br>
+    Fecha de Nacimiento: <input type="date" id="fechaNacimiento" placeholder="Fecha de Nacimiento"><br>
+    Pais:                <select id="pais" type="text">
+
+                          <option value="Honduras">Honduras</option>
+                          <option value="Panama">Panama</option>
+                          <option value="Guatemala">Guatemala</option>
+                          <option value="EL Salvador">El Salvador</option>
+
+                        </select><br><br>
+
+                        <button type="submit" onclick="guardar()">Guardar</button>
+                        <button type="submit" onclick="actualizar()">Actualizar</button>
+                        <button type="submit" onclick="limpiar()">Limpiar</button><br>
+
+                        <hr><br><br>
+
+                        <table id="tabla-usuarios">
+                          <thead>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Fecha de Nacimiento</th>
+                            <th>Pais</th>
+                          </thead>
+                          <tbody>
+
+                          </tbody>
+                        </table>
+
+                        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                        <script type="text/javascript" src="js/controlador.js"></script>
+  </body>
+</html>
