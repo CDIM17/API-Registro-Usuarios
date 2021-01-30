@@ -14,7 +14,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
     // code...
     $_POST = json_decode(file_get_contents('php://input'),true);
 
-    $usuario = new Usuario($_POST['nombre'],$_POST['apellido'],$_POST['fechaNacimiento'],$_POST['pais']);
+    $usuario = new Usuario($_POST['nombre'],$_POST['apellido'],$_POST['fechaNacimiento'],$_POST['pais'],$_POST['tipo']);
     $usuario->guardarUsuario();
     $resultado["mensaje"] = "Informacion de Usuario Guardado: ".json_encode($_POST);
 
@@ -39,7 +39,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
    $_PUT = json_decode(file_get_contents('php://input'),true);
 
-   $usuario = new Usuario($_PUT['nombre'],$_PUT['apellido'],$_PUT['fechaNacimiento'],$_PUT['pais']);
+   $usuario = new Usuario($_PUT['nombre'],$_PUT['apellido'],$_PUT['fechaNacimiento'],$_PUT['pais'],$_PUT['tipo']);
    $usuario->actualizarUsuario($_GET['id']);
 
    Usuario::obtenerUsuario($_GET['id']);

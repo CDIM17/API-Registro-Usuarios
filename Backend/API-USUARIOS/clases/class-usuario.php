@@ -9,14 +9,16 @@ class Usuario
   private $apellido;
   private $fechaNacimiento;
   private $pais;
+  private $tipo;
 
-   function __construct($nombre,$apellido,$fechaNacimiento,$pais)
+   function __construct($nombre,$apellido,$fechaNacimiento,$pais,$tipo)
    {
        // code...
        $this->nombre          = $nombre;
        $this->apellido        = $apellido;
        $this->fechaNacimiento = $fechaNacimiento;
-       $this->pais          = $pais;
+       $this->pais            = $pais;
+       $this->tipo            = $tipo;
    }
 
    public function guardarUsuario()
@@ -28,7 +30,8 @@ class Usuario
        'nombre'          => $this->nombre,
        'apellido'        => $this->apellido,
        'fechaNacimiento' => $this->fechaNacimiento,
-       'pais'            => $this->pais
+       'pais'            => $this->pais,
+       'tipo'            => $this->tipo
      );
 
      $archivo = fopen("../data/usuarios.json","w");
@@ -65,7 +68,8 @@ class Usuario
            'nombre'          => $this->nombre,
            'apellido'        => $this->apellido,
            'fechaNacimiento' => $this->fechaNacimiento,
-           'pais'            => $this->pais
+           'pais'            => $this->pais,
+           'tipo'            => $this->tipo
          );
 
          $usuarios[$indice] = $usuario;
@@ -125,7 +129,6 @@ class Usuario
     public function setFechaNacimiento($fechaNacimiento)
     {
         $this->fechaNacimiento = $fechaNacimiento;
-
         return $this;
     }
 
@@ -139,7 +142,18 @@ class Usuario
     public function setpais($pais)
     {
         $this->pais = $pais;
+        return $this;
+    }
 
+    public function getTipo()
+    {
+        return $this->tipo;
+    }
+
+
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
         return $this;
     }
 
