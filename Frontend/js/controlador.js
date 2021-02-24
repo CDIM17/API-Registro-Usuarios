@@ -1,10 +1,18 @@
 var usuarios = [];
 var usuarioSeleccionado;
 
-var url = 'http://localhost/API-Usuarios/Backend/API-USUARIOS/api/usuarios.php';
+//const url = 'https://en-linea.app/AlwaysVacant/BackEnd/API/Usuarios/usuario.php';
+
+//const url = 'http://localhost:8888/always-vacant-heroku/API/Usuarios/usuario.php';
+
+const url = 'https://always-vacant.herokuapp.com/API/auth.php';
 
 function obtenerUsuarios()
 {
+  let datos = {
+    token:'bdab9c861e26129ddf9f1263bb0baa2a'
+ };
+
     axios({
       method:'GET',
       url: url,
@@ -29,10 +37,10 @@ function llenarTabla()
   for(let i=0; i<usuarios.length;i++)
   {
        let fila = tbody.insertRow();
-       fila.insertCell().innerHTML = usuarios[i]['nombre'];
-       fila.insertCell().innerHTML = usuarios[i]['apellido'];
-       fila.insertCell().innerHTML = usuarios[i]['fechaNacimiento'];
-       fila.insertCell().innerHTML = usuarios[i]['pais'];
+       fila.insertCell().innerHTML = usuarios[i]['ID_Categoria'];
+       fila.insertCell().innerHTML = usuarios[i]['Compania'];
+       fila.insertCell().innerHTML = usuarios[i]['URL'];
+
 
        boton_eliminar = fila.insertCell();
        boton_eliminar.innerHTML = '<button type="button">Eliminar</button>';
@@ -71,8 +79,8 @@ function eliminar(id)
 function guardar()
 {
   let usuario = {
-     nombre: document.getElementById('nombre').value,
-     apellido:document.getElementById('apellido').value,
+     Usuario: document.getElementById('nombre').value,
+     Contrasena:document.getElementById('apellido').value,
      fechaNacimiento:document.getElementById('fechaNacimiento').value,
      pais: document.getElementById('pais').value
   };
